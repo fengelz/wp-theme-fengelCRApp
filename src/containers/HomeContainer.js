@@ -1,5 +1,8 @@
 import React from 'react'
 import { Context } from './Provider'
+import {
+  fetchPosts
+} from '../wpService.js'
 
 import ConsumingComponent from './ConsumingComponent'
 import Home from '../modules/organisms/Home'
@@ -11,19 +14,23 @@ const HomeContainer = props => (
   </Context.Consumer>
 )
 
-class HomeHandler extends ConsumingComponent {
+class HomeHandler extends React.PureComponent {
   constructor() {
     super()
+    this.state = {content: null}
+  }
+
+  componentDidMount() {
+    fetchPosts().then(response => {
+      this.setState({ content : response })
+    })
   }
 
   render() {
+    
     return (
-      <Context.Consumer>
-        {data => {
-          const content = data.content(this.props.match.url)
-          return content ? <Home posts={content.content} /> : <Loader />
-        }}
-      </Context.Consumer>
+      this.state.content ? <Home posts={this.state.content} /> : <div>loadng</div>
+      
     )
   }
 }

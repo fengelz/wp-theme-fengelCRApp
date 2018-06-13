@@ -9,12 +9,15 @@ import './styles.css'
 class Home extends Component {
   render() {
     const { posts } = this.props
+    if(posts === null)
+    return null
     return (
-      <div className="org-a9ca065c-a467-47bb-a252-2138bff1cb1d">
-        {posts.map(post => {
+      <div className="org-a9ca065c-a467-47bb-a252-2138bff1cb1d">     
+        { posts.map(post => {
           moment.locale('DA')
           return (
             <div className="post" key={post.id}>
+            1492
               <h2>
                 <Link to={`/${post.slug}`}>{post.title.rendered}</Link>
               </h2>

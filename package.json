@@ -11,7 +11,8 @@
     "react-render-html": "^0.6.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "underscore": "^1.9.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
