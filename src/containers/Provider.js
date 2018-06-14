@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import MasterContainer from './MasterContainer'
 
 import {
   fetchRoot,
@@ -8,8 +7,6 @@ import {
   fetchCategories,
   fetchTags,
   fetchMenus,
-  fetchPostById,
-  fetchPostBySlug,
 } from '../wpService.js'
 
 import Loader from '../modules/atoms/Loader'
@@ -20,60 +17,6 @@ class Provider extends Component {
   constructor() {
     super()
 
-    this.fetchContent = (match) => {
-      if (this.state.hasContent(match.url)) {
-        return
-      }
-      const cache = this.state.cache
-      cache.push({
-        url: `${match.url}`,
-      })
-
-      if (match.params.taxonomy && match.params.slug) {
-        const tag = this.state[match.params.taxonomy].find((e) => {
-          return e.slug === match.params.slug
-        })
-        fetchPosts(match.params.taxonomy, tag.id).then((response) => {
-          cache.push({
-            url: `${match.url}`,
-            content: response,
-          })
-          this.setState({ cache })
-        })
-      } else if (match.params.postSlug) {
-        fetchPostBySlug(match.params.postSlug).then((response) => {
-          cache.push({
-            url: `${match.url}`,
-            content: response[0],
-          })
-          this.setState({ cache })
-        })
-      } else {
-        fetchPosts().then((response) => {
-          cache[0] = {
-            url: `${match.url}`,
-            content: response,
-          }
-          this.setState({ cache })
-        })
-      }
-    }
-
-    this.getContent = (url) => {
-      return (
-        this.state.cache.find((e) => {
-          return e.url === url
-        }) || null
-      )
-    }
-    this.hasContent = (url) => {
-      return (
-        this.state.cache.find((e) => {
-          return e.url === url
-        }) === null
-      )
-    }
-
     this.state = {
       root: {},
       pages: [],
@@ -81,52 +24,75 @@ class Provider extends Component {
       categories: [],
       tags: [],
       cache: [],
-      getContent: this.getContent,
-      hasContent: this.hasContent,
       loading: true,
-      fetchContent: this.fetchContent,
+    }
+
+    this.getPosts = (match) => {
+      if (match.url === '/') return this.state.posts
+      else {
+        if (match.path.indexOf('/tag/') > -1) {
+          const taxId = this.state.tags.find((tag) => {
+            return tag.slug === match.params.slug
+          }).id
+          return this.state.posts.filter((post) => {
+            return post.tags.indexOf(taxId) >= 0
+          })
+        } else if (match.path.indexOf('/category/') > -1) {
+          const taxId = this.state.categories.find((category) => {
+            return category.slug === match.params.slug
+          }).id
+          return this.state.posts.filter((post) => {
+            return post.categories.indexOf(taxId) >= 0
+          })
+        }
+      }
+    }
+    this.getPost = (slug) => {
+      return this.state.posts.find((post) => {
+        console.log(post, slug)
+        return post.slug === slug
+      })
     }
   }
 
   componentDidMount() {
-    console.log('provider did mount')
+    let { menus, categories, tags, pages, posts, root } = {}
     fetchRoot()
-      .then((response) =>
-        this.setState({
-          root: response,
-        })
-      )
+      .then((response) => (root = response))
       .then(fetchMenus)
       .then((response) => {
-        this.setState({
-          menus: response,
-        })
+        menus = response
       })
       .then(fetchCategories)
       .then((response) => {
-        this.setState({
-          categories: response,
-        })
+        categories = response
       })
       .then(fetchTags)
       .then((response) => {
-        this.setState({
-          tags: response,
-        })
+        tags = response
       })
       .then(fetchPages)
       .then((response) => {
+        pages = response
+      })
+      .then(fetchPosts)
+      .then((response) => {
+        posts = response
+        console.log('Fuck you')
         this.setState({
-          pages: response,
+          root,
+          menus,
+          categories,
+          tags,
+          pages,
+          posts,
           loading: false,
         })
+        console.log(this.state, 'state')
       })
   }
 
   render() {
-    // return (<Context.Provider value={this.state}>
-    //     {this.props.children}
-    //   </Context.Provider>
     return this.state.loading ? (
       <Loader />
     ) : (
@@ -134,7 +100,8 @@ class Provider extends Component {
         value={{
           state: this.state,
           actions: {
-            getContent: (match) => this.getContent(match),
+            getPosts: (match) => this.getPosts(match),
+            getPost: (slug) => this.getPost(slug),
           },
         }}>
         {this.props.children}
