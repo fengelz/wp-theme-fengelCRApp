@@ -6,7 +6,7 @@ class AboutContainer extends Component {
   render() {
     return (
       <Context.Consumer>
-        {data => {
+        {(data) => {
           return <About />
         }}
       </Context.Consumer>

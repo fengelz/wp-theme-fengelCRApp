@@ -6,14 +6,12 @@ class AsideContainer extends Component {
   render() {
     return (
       <Context.Consumer>
-        {data => {
+        {({ state, actions }) => {
           return (
             <Aside
-              categories={
-                data.categories
-              }
-              tags={data.tags}
-              menus={data.menus}
+              categories={state.categories}
+              tags={state.tags}
+              menus={state.menus}
             />
           )
         }}

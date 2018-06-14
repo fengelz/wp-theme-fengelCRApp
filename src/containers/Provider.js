@@ -20,21 +20,20 @@ class Provider extends Component {
   constructor() {
     super()
 
-    this.fetchContent = match => {
+    this.fetchContent = (match) => {
       if (this.state.hasContent(match.url)) {
-        return;
+        return
       }
       const cache = this.state.cache
       cache.push({
         url: `${match.url}`,
       })
 
-      
       if (match.params.taxonomy && match.params.slug) {
-        const tag = this.state[match.params.taxonomy].find(e => {
+        const tag = this.state[match.params.taxonomy].find((e) => {
           return e.slug === match.params.slug
         })
-        fetchPosts(match.params.taxonomy, tag.id).then(response => {
+        fetchPosts(match.params.taxonomy, tag.id).then((response) => {
           cache.push({
             url: `${match.url}`,
             content: response,
@@ -42,7 +41,7 @@ class Provider extends Component {
           this.setState({ cache })
         })
       } else if (match.params.postSlug) {
-        fetchPostBySlug(match.params.postSlug).then(response => {
+        fetchPostBySlug(match.params.postSlug).then((response) => {
           cache.push({
             url: `${match.url}`,
             content: response[0],
@@ -50,27 +49,26 @@ class Provider extends Component {
           this.setState({ cache })
         })
       } else {
-        fetchPosts().then(response => {
-          cache[0] =  {
+        fetchPosts().then((response) => {
+          cache[0] = {
             url: `${match.url}`,
             content: response,
           }
           this.setState({ cache })
-
         })
       }
     }
 
-    this.getContent = url => {
+    this.getContent = (url) => {
       return (
-        this.state.cache.find(e => {
+        this.state.cache.find((e) => {
           return e.url === url
         }) || null
       )
     }
-    this.hasContent = url => {
+    this.hasContent = (url) => {
       return (
-        this.state.cache.find(e => {
+        this.state.cache.find((e) => {
           return e.url === url
         }) === null
       )
@@ -93,31 +91,31 @@ class Provider extends Component {
   componentDidMount() {
     console.log('provider did mount')
     fetchRoot()
-      .then(response =>
+      .then((response) =>
         this.setState({
           root: response,
         })
       )
       .then(fetchMenus)
-      .then(response => {
+      .then((response) => {
         this.setState({
           menus: response,
         })
       })
       .then(fetchCategories)
-      .then(response => {
+      .then((response) => {
         this.setState({
           categories: response,
         })
       })
       .then(fetchTags)
-      .then(response => {
+      .then((response) => {
         this.setState({
           tags: response,
         })
       })
       .then(fetchPages)
-      .then(response => {
+      .then((response) => {
         this.setState({
           pages: response,
           loading: false,
@@ -132,7 +130,13 @@ class Provider extends Component {
     return this.state.loading ? (
       <Loader />
     ) : (
-      <Context.Provider value={this.state}>
+      <Context.Provider
+        value={{
+          state: this.state,
+          actions: {
+            getContent: (match) => this.getContent(match),
+          },
+        }}>
         {this.props.children}
       </Context.Provider>
     )

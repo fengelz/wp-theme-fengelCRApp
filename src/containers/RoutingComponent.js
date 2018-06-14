@@ -1,6 +1,6 @@
 import React from 'react'
 
-class ConsumingComponent extends React.Component {
+class RoutingComponent extends React.Component {
   componentDidMount() {
     const { taxonomy, slug } = this.props.match.params
     this.props.context.fetchContent(this.props.match)
@@ -12,4 +12,4 @@ class ConsumingComponent extends React.Component {
   }
 }
 
-export default ConsumingComponent
+export default RoutingComponent

@@ -5,7 +5,6 @@ import MasterContainer from './MasterContainer'
 import AsideContainer from './AsideContainer'
 import PostContainer from './PostContainer'
 
-
 class App extends Component {
   render() {
     return (
