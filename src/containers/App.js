@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import 'babel-polyfill'
+
 import PostsContainer from './PostsContainer'
 import MasterContainer from './MasterContainer'
 import AsideContainer from './AsideContainer'
