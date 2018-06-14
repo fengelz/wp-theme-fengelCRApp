@@ -1,7 +1,7 @@
 import React from 'react'
 import { Context } from './Provider'
 
-import Posts from '../modules/organisms/Posts'
+import Posts from '../components/organisms/Posts'
 
 class PostsContainer extends React.PureComponent {
   render() {

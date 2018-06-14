@@ -1,7 +1,7 @@
 import React from 'react'
 import { Context } from './Provider'
 
-import Post from '../modules/molecules/Post'
+import Post from '../components/molecules/Post'
 
 class PostContainer extends React.Component {
   render() {

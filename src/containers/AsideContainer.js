@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Context } from './Provider'
-import Aside from '../modules/molecules/Aside'
+import Aside from '../components/molecules/Aside'
 
 class AsideContainer extends Component {
   render() {

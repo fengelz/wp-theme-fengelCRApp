@@ -16,7 +16,6 @@ class Posts extends Component {
           moment.locale('DA')
           return (
             <div className="post" key={post.id}>
-              1492
               <h2>
                 <Link to={`/${post.slug}`}>{post.title.rendered}</Link>
               </h2>

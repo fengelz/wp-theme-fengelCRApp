@@ -1,5 +1,5 @@
 import React from 'react'
-import Master from '../modules/organisms/Master'
+import Master from '../components/organisms/Master'
 
 class MasterContainer extends React.Component {
   render() {

@@ -9,7 +9,7 @@ import {
   fetchMenus,
 } from '../wpService.js'
 
-import Loader from '../modules/atoms/Loader'
+import Loader from '../components/atoms/Loader'
 
 const Context = React.createContext()
 
@@ -49,7 +49,6 @@ class Provider extends Component {
     }
     this.getPost = (slug) => {
       return this.state.posts.find((post) => {
-        console.log(post, slug)
         return post.slug === slug
       })
     }
@@ -78,7 +77,6 @@ class Provider extends Component {
       .then(fetchPosts)
       .then((response) => {
         posts = response
-        console.log('Fuck you')
         this.setState({
           root,
           menus,
@@ -88,7 +86,6 @@ class Provider extends Component {
           posts,
           loading: false,
         })
-        console.log(this.state, 'state')
       })
   }
 

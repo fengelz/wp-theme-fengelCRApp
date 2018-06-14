@@ -6,7 +6,7 @@ class RoutingComponent extends React.Component {
     this.state = { routeChanged: false }
   }
   componentDidMount() {
-    const { context, location, match } = this.props
+    const { context, match } = this.props
 
     this.setState({ routeChanged: false })
     context.actions.fetchContent(match)
