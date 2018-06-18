@@ -12,6 +12,7 @@ class AsideContainer extends Component {
               categories={state.categories}
               tags={state.tags}
               menus={state.menus}
+              toggleMenu={state.toggleMenu}
             />
           )
         }}

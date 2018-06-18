@@ -25,6 +25,11 @@ class Provider extends Component {
       tags: [],
       cache: [],
       loading: true,
+      menuOpen: false,
+      toggleMenu: () => {
+        console.log('FU')
+        this.setState({ menuOpen: !this.state.menuOpen })
+      },
     }
 
     this.getPosts = (match) => {
