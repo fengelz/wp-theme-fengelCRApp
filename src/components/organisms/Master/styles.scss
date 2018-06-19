@@ -43,7 +43,7 @@ img {
 }
 
 .org-05396e7b-bd4b-4913-a46a-310f301f2b77 {
-  height: 100vh;
+  height: 100%;
   width: 200vw;
   display: flex;
   flex-direction: row;
@@ -53,7 +53,6 @@ img {
     padding: 1.5rem;
     width: 100vw;
     box-shadow: -1.5rem 0rem 3rem 1.5rem rgba(0, 0, 0, 0.5);
-   
     background-color: #eee;
     transform: perspective(200rem) rotateY(0);
     transition: all 200ms ease-in;
@@ -63,7 +62,7 @@ img {
   &.menu-open {
     & > section { 
       flex: 1;
-      transform: perspective(200rem) rotateY(65deg);
+      transform: perspective(200rem) rotateY(74deg);
     }
   }
 }

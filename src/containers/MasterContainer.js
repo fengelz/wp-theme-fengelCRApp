@@ -1,17 +1,18 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
+
 import Master from '../components/organisms/Master'
-import { Context } from './Provider'
 
 class MasterContainer extends React.Component {
+  componentDidUpdate(prevProps) {
+    const { location } = this.props
+    if (location.pathname !== prevProps.location.pathname) {
+      this.props.closeMenu()
+    }
+  }
   render() {
-    return (
-      <Context.Consumer>
-        {({ state, actions }) => {
-          return <Master {...state}>{this.props.children}</Master>
-        }}
-      </Context.Consumer>
-    )
+    return <Master {...this.props}>{this.props.children}</Master>
   }
 }
 
-export default MasterContainer
+export default withRouter(MasterContainer)

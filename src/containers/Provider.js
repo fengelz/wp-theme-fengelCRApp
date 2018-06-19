@@ -29,6 +29,9 @@ class Provider extends Component {
       toggleMenu: () => {
         this.setState({ menuOpen: !this.state.menuOpen })
       },
+      closeMenu: () => {
+        this.setState({ menuOpen: false })
+      },
     }
 
     this.getPosts = (match) => {
@@ -103,6 +106,7 @@ class Provider extends Component {
           actions: {
             getPosts: (match) => this.getPosts(match),
             getPost: (slug) => this.getPost(slug),
+            toggleMenu: () => this.toggleMenu,
           },
         }}>
         {this.props.children}

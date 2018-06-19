@@ -39,7 +39,7 @@ img {
   box-sizing: border-box; }
 
 .org-05396e7b-bd4b-4913-a46a-310f301f2b77 {
-  height: 100vh;
+  height: 100%;
   width: 200vw;
   display: flex;
   flex-direction: row; }
@@ -55,7 +55,7 @@ img {
     transform-origin: bottom left; }
   .org-05396e7b-bd4b-4913-a46a-310f301f2b77.menu-open > section {
     flex: 1;
-    transform: perspective(200rem) rotateY(65deg); }
+    transform: perspective(200rem) rotateY(74deg); }
 
 @media (min-width: 992px) {
   .org-05396e7b-bd4b-4913-a46a-310f301f2b77 > section {
