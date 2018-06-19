@@ -27,7 +27,6 @@ class Provider extends Component {
       loading: true,
       menuOpen: false,
       toggleMenu: () => {
-        console.log('FU')
         this.setState({ menuOpen: !this.state.menuOpen })
       },
     }
@@ -61,12 +60,12 @@ class Provider extends Component {
 
   componentDidMount() {
     let { menus, categories, tags, pages, posts, root } = {}
-    fetchRoot()
-      .then((response) => (root = response))
-      .then(fetchMenus)
-      .then((response) => {
-        menus = response
-      })
+    fetchMenus()
+      .then((response) => (menus = response))
+      // .then(fetchRoot)
+      // .then((response) => {
+      //   root = response
+      // })
       .then(fetchCategories)
       .then((response) => {
         categories = response
