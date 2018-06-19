@@ -8,7 +8,6 @@
   position: relative;
   z-index: 20;
   float: left;
-  
   transition: all 200ms ease-in;
   nav {
     height: 100%;
@@ -55,7 +54,7 @@
     }
   }
   .menu-open & {
-    width: 90vw;
+    width: 70vw;
     padding: 1.5rem;
     overflow-x: hidden;
     nav {
