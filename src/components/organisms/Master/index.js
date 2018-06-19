@@ -12,7 +12,7 @@ class Master extends React.Component {
         }`}>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Fengel.com | Bitch and Peaces</title>
+          <title>Sune Fengel | Bitch and Peaces</title>
         </Helmet>
         {this.props.children}
       </main>

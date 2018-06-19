@@ -13,7 +13,7 @@ class Post extends PureComponent {
       <article className="mol-28055d40-87fd-4b8c-925d-c061f7d075d2">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Fengel.com | {post.title.rendered}</title>
+          <title>Sune Fengel | {post.title.rendered}</title>
         </Helmet>
         <h1>{post.title.rendered}</h1>
         <time>{moment(post.date).format('Do MMM YYYY')}</time>
