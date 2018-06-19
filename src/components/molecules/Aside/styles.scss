@@ -1,20 +1,21 @@
 .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
   height: 100vh;
-  width: 12rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 1.5rem;
-  border-right: 1px dashed #666;
-  box-shadow: -1.5rem 0rem 3rem 1.5rem rgba(0, 0, 0, 0.5);
+  width: 0;
+  padding: 1.5rem 0;
+  box-shadow: -1.5rem 0rem 3rem 1.5rem rgba(0, 0, 0, 0.1);
   background-color: #fefefe;
   position: relative;
   z-index: 20;
-  animation: slide-in-mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 200ms ease-in;
-  animation-fill-mode: forwards;
-  transform: translateX(-100%);
+  float: left;
+  transition: all 200ms ease-in;
   nav {
     height: 100%;
     width: 100%;
+    overflow-y: auto;
+    transform: skewY(-30deg);
+    transition: all 200ms ease-in;
+    white-space: nowrap;
+    transform-origin: top left;
   }
   ul,
   li {
@@ -29,7 +30,64 @@
   a {
     text-decoration: none;
   }
+  .handle {
+    width: 3rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 0;
+    right: -1.5rem;
+    &:before, &:after {
+      width: 50%;
+      height: 100%;
+      color: white;
+      background-color: black;
+      line-height: 1;
+      display: inline-block;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    &:before {
+      content: '-';
+    }
+    &:after {
+      content: '+';
+      transition: all 200ms ease-in;
+      transform: skewY(0) translateY(0);
+      opacity: 1;
+    }
+  }
+  .menu-open & {
+    width: 70vw;
+    padding: 1.5rem;
+    nav {
+      transform: skewY(0);
+    }
+    .handle {
+      &:after {
+        transform: skewY(40deg) translateY(9px);
+        opacity: .3;
+      }
+    }
+  }
 }
+
+@media (min-width: 992px) {  
+  .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
+    animation: slide-in-mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 200ms ease-in;
+    animation-fill-mode: forwards;
+    width: 20vw;
+    padding: 1.5rem;
+    border-right: 0px dashed #666;
+    box-shadow: -1.5rem 0rem 3rem 1.5rem rgba(0, 0, 0, 0.3);
+    nav {
+      transform: skewY(0);
+    }
+    .handle {
+      display: none;
+    }
+  }
+}
+
 @keyframes slide-in-mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
   0% {
     transform: translateX(-100%);

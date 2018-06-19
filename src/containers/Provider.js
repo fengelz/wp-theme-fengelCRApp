@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import {
-  fetchRoot,
   fetchPages,
   fetchPosts,
   fetchCategories,
@@ -25,6 +24,13 @@ class Provider extends Component {
       tags: [],
       cache: [],
       loading: true,
+      menuOpen: false,
+      toggleMenu: () => {
+        this.setState({ menuOpen: !this.state.menuOpen })
+      },
+      closeMenu: () => {
+        this.setState({ menuOpen: false })
+      },
     }
 
     this.getPosts = (match) => {
@@ -56,12 +62,12 @@ class Provider extends Component {
 
   componentDidMount() {
     let { menus, categories, tags, pages, posts, root } = {}
-    fetchRoot()
-      .then((response) => (root = response))
-      .then(fetchMenus)
-      .then((response) => {
-        menus = response
-      })
+    fetchMenus()
+      .then((response) => (menus = response))
+      // .then(fetchRoot)
+      // .then((response) => {
+      //   root = response
+      // })
       .then(fetchCategories)
       .then((response) => {
         categories = response
@@ -99,6 +105,7 @@ class Provider extends Component {
           actions: {
             getPosts: (match) => this.getPosts(match),
             getPost: (slug) => this.getPost(slug),
+            toggleMenu: () => this.toggleMenu,
           },
         }}>
         {this.props.children}

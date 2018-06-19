@@ -6,6 +6,7 @@ class Aside extends PureComponent {
   render() {
     return (
       <aside className="mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29">
+        <div className="handle" onClick={this.props.toggleMenu} />
         <nav>
           <ul>
             <li>
