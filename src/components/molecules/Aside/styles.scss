@@ -5,10 +5,9 @@
   position: relative;
   z-index: 20;
   overflow: hidden;
-  transition: all 500ms ease-in;    
-  transform-origin: center right;
-  transform: scaleX(0);
-  flex:0;
+  
+  width: 70vw;
+  float: left;
   nav {
     height: 100%;
     width: 100%;
@@ -27,10 +26,6 @@
   }
   a {
     text-decoration: none;
-  }
-  .menu-open & {
-    transform: scaleX(1);
-    flex: 4;
   }
 }
 

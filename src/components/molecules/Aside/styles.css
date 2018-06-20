@@ -5,10 +5,8 @@
   position: relative;
   z-index: 20;
   overflow: hidden;
-  transition: all 500ms ease-in;
-  transform-origin: center right;
-  transform: scaleX(0);
-  flex: 0; }
+  width: 70vw;
+  float: left; }
   .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 nav {
     height: 100%;
     width: 100%;
@@ -24,9 +22,6 @@
     margin-bottom: 0; }
   .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 a {
     text-decoration: none; }
-  .menu-open .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
-    transform: scaleX(1);
-    flex: 4; }
 
 @media (min-width: 992px) {
   .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
