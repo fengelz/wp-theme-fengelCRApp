@@ -1,12 +1,14 @@
 import React, { PureComponent } from 'react'
 import { Link } from 'react-router-dom'
+
+import Header from '../Header'
 import './styles.css'
 
 class Aside extends PureComponent {
   render() {
     return (
       <aside className="mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29">
-        <div className="handle" onClick={this.props.toggleMenu} />
+        <Header toggleMenu={this.props.toggleMenu} char="-" />
         <nav>
           <ul>
             <li>

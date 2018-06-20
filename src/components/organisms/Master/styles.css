@@ -19,7 +19,7 @@ body {
 
 a {
   color: inherit;
-  transition: all 200ms ease-in;
+  transition: all 500ms ease-in;
   transform: translateX(0); }
   a:hover {
     opacity: 0.6;
@@ -40,31 +40,31 @@ img {
 
 .org-05396e7b-bd4b-4913-a46a-310f301f2b77 {
   height: 100%;
-  width: 200vw;
+  width: 100vw;
   display: flex;
   flex-direction: row; }
   .org-05396e7b-bd4b-4913-a46a-310f301f2b77 > section {
     height: 100vh;
     overflow: auto;
-    padding: 1.5rem;
-    width: 100vw;
+    width: 100%;
     box-shadow: -1.5rem 0rem 3rem 1.5rem rgba(0, 0, 0, 0.5);
     background-color: #fefefe;
-    transform: perspective(200rem) rotateY(0);
-    transition: all 200ms ease-in;
-    transform-origin: bottom left; }
+    transform: perspective(20rem) rotateY(0);
+    transition: all 500ms ease-in;
+    transform-origin: bottom left;
+    flex: 1; }
   .org-05396e7b-bd4b-4913-a46a-310f301f2b77.menu-open > section {
-    flex: 1;
-    transform: perspective(200rem) rotateY(74deg);
+    transform: perspective(20rem) rotateY(-15deg);
     background-color: #ccc; }
 
 @media (min-width: 992px) {
   .org-05396e7b-bd4b-4913-a46a-310f301f2b77 > section {
-    animation: slide-in 200ms ease-in;
+    animation: slide-in 500ms ease-in;
     animation-direction: normal;
     animation-delay: 500ms;
     animation-fill-mode: forwards;
-    width: 60vw; } }
+    width: 60vw;
+    flex: none; } }
 
 @keyframes slide-in {
   0% {

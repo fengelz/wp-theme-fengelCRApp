@@ -8,6 +8,8 @@ import AsideContainer from './AsideContainer'
 import PostContainer from './PostContainer'
 import { Context } from './Provider'
 
+import Header from '../components/molecules/Header'
+
 class App extends Component {
   render() {
     return (
@@ -16,8 +18,9 @@ class App extends Component {
           return (
             <Router>
               <MasterContainer {...state}>
-                <AsideContainer />
+                <AsideContainer {...state} />
                 <section>
+                  <Header {...state} char="+" />
                   <Switch>
                     <Route exact path="/" component={PostsContainer} />
                     <Route exact path="/:postSlug" component={PostContainer} />
