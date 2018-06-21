@@ -58,6 +58,12 @@ class Provider extends Component {
         return post.slug === slug
       })
     }
+    this.getTaxBySlug = (slug) => {
+      const taxes = this.state.categories.concat(this.state.tags)
+      return taxes.find((tax) => {
+        return tax.slug === slug
+      })
+    }
   }
 
   componentDidMount() {
@@ -106,6 +112,7 @@ class Provider extends Component {
             getPosts: (match) => this.getPosts(match),
             getPost: (slug) => this.getPost(slug),
             toggleMenu: () => this.toggleMenu,
+            getTaxBySlug: (slug) => this.getTaxBySlug(slug),
           },
         }}>
         {this.props.children}

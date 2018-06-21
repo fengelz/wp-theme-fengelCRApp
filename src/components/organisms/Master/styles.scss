@@ -9,7 +9,13 @@ html {
   font-size: 14px;
   color: #333;
   font-family: 'Nixie One', serif;
-  background-color: #ddd;
+  background:
+    radial-gradient(#ddd 15%, transparent 16%) 0 0,
+    radial-gradient(#ddd 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#eee;
+  background-size:16px 16px;
   line-height: 1.5;
   height: 100%;
 }

@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import 'babel-polyfill'
 
-import PostsContainer from './PostsContainer'
+import HomeContainer from './HomeContainer'
+import TaxContainer from './TaxContainer'
 import MasterContainer from './MasterContainer'
 import AsideContainer from './AsideContainer'
 import PostContainer from './PostContainer'
@@ -22,11 +23,11 @@ class App extends Component {
                 <section>
                   <Header {...state} char="+" />
                   <Switch>
-                    <Route exact path="/" component={PostsContainer} />
+                    <Route exact path="/" component={HomeContainer} />
                     <Route exact path="/:postSlug" component={PostContainer} />
-                    <Route path="/tag/:slug" component={PostsContainer} />
-                    <Route path="/category/:slug" component={PostsContainer} />
-                    <Route component={PostsContainer} />
+                    <Route path="/tag/:slug" component={TaxContainer} />
+                    <Route path="/category/:slug" component={TaxContainer} />
+                    <Route component={HomeContainer} />
                   </Switch>
                 </section>
               </MasterContainer>

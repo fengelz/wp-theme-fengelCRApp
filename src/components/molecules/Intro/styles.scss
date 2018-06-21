@@ -1,0 +1,29 @@
+.mol-eb7f4bd8-d14e-4bc1-be67-341064cca113 {
+    padding: 1.5rem;
+    background-color: crimson;
+    color: white;
+    position: relative;
+    text-align: center;
+    margin-bottom: 9rem;
+    &:after {
+      content: "";
+      width: 0;
+      position: absolute;
+      bottom: -3rem;
+      left: 0;
+      height: 0;
+      border-left: 50vw solid transparent;
+      border-right: 50vw solid transparent;
+      border-top: 3rem solid crimson;
+    }
+}
+
+@media (min-width: 992px) {  
+    .mol-eb7f4bd8-d14e-4bc1-be67-341064cca113 {
+        &:after {
+          border-left: 30vw solid transparent;
+          border-right: 30vw solid transparent;
+          border-top: 3rem solid crimson;
+        }
+    }
+}
