@@ -17,9 +17,17 @@ class Posts extends Component {
           return (
             <div className="post" key={post.id}>
               <h2>
-                <Link to={`/${post.slug}`}>{post.title.rendered}</Link>
+                <Link to={`/${post.slug}`}>
+                  <Html content={post.title.rendered} />
+                </Link>
               </h2>
-              <Html content={post.excerpt.rendered} />
+              <Html
+                content={
+                  this.props.full
+                    ? post.content.rendered
+                    : post.excerpt.rendered
+                }
+              />
               <time>{moment(post.date).format('Do MMM YYYY')}</time>
             </div>
           )
