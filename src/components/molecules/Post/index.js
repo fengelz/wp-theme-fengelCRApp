@@ -15,7 +15,9 @@ class Post extends PureComponent {
           <meta charSet="utf-8" />
           <title>Sune Fengel | {post.title.rendered}</title>
         </Helmet>
-        <h1>{post.title.rendered}</h1>
+        <h1>
+          <Html content={post.title.rendered} />
+        </h1>
         <time>{moment(post.date).format('Do MMM YYYY')}</time>
         <Html content={post.content.rendered} />
       </article>
