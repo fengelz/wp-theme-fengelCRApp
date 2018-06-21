@@ -24,6 +24,7 @@ body {
 }
 #root {
   overflow: hidden;
+  height: 100%;
 }
 a {
   color: inherit;
@@ -54,7 +55,7 @@ img {
   margin-left: -70vw;
   transition: margin 300ms ease-in;
   & > section {
-    height: 100vh;
+    height: calc(100vh - (100vh - 100%));
     overflow: auto;
     width: 100%;
     box-shadow: -1.5rem 0rem 3rem 1.5rem rgba(0, 0, 0, 0.5);
@@ -63,12 +64,20 @@ img {
     transition: all 500ms ease-in;
     transform-origin: bottom left;
     width: 100vw;
+    .atom-f6089643-9ab0-4a31-8a40-3ef172ec5a04 {
+      opacity: 1;
+      transition: opacity 200ms;
+    }
   }
   &.menu-open {
+    
     margin-left:0;
     & > section {
       transform: perspective(15rem) rotateY(15deg);
       background-color: #ccc;
+      .atom-f6089643-9ab0-4a31-8a40-3ef172ec5a04 {
+        opacity: 0;
+      }
     }
 
   }
