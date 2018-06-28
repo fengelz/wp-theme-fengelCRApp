@@ -7,14 +7,12 @@
   border-bottom: 0.75rem solid rgba(0, 0, 0, 0.2);
   border-left: 0.75rem solid black;
   transform: translateZ(0);
-  animation: load8 1.1s infinite linear;
+  animation: load8 600ms infinite linear;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%);
-  transform: translateY(-50%); }
+  left: calc(50% - 2rem);
+  top: calc(50% - 2rem); }
   .atom-7456f3eb-0882-454a-a1dc-e3078dda7f34:after {
     border-radius: 50%;
     width: 4rem;
