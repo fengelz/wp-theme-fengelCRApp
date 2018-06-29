@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Helmet } from 'react-helmet'
 import moment from 'moment'
+import renderHTML from 'react-render-html'
 
 import Html from '../../atoms/Html'
 
@@ -10,8 +11,7 @@ class Post extends PureComponent {
     return (
       <article className="mol-28055d40-87fd-4b8c-925d-c061f7d075d2">
         <Helmet>
-          <meta charSet="utf-8" />
-          <title>Sune Fengel | {post.title.rendered}</title>
+          <title>Sune Fengel | {renderHTML(post.title.rendered)}</title>
         </Helmet>
         <h1>
           <Html content={post.title.rendered} />
