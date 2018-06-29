@@ -12,10 +12,8 @@ class Aside extends PureComponent {
         <Header toggleMenu={this.props.toggleMenu} char="-" />
         <nav>
           <ul>
-            <li>
-              <Link className={pathname === '/' ? 'active' : ''} to={`/`}>
-                Home
-              </Link>
+            <li className={pathname === '/' ? 'active' : ''}>
+              <Link to={`/`}>Home</Link>
             </li>
             <li>
               <ul>
