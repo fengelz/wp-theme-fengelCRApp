@@ -23,6 +23,9 @@
     position: relative;
     background-color: transparent;
     transition: background-color 200ms ease-in;
+    ul {
+      margin-top: 1.5rem;
+    }
     &:after {
       content: "";
       position: absolute;
@@ -50,17 +53,14 @@
   }
   h3 {
     color: crimson;
-    margin-bottom: 12px;
+    margin-bottom: .75rem;
   }
   a {
     text-decoration: none;
     padding: 3px 0 3px 6px;
     display: inline-block;
   }
-}
-
-@media (min-width: 992px) {  
-  .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
+  @include media-breakpoint-up(lg) {
     animation: slide-in-mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 500ms ease-in;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
@@ -75,7 +75,7 @@
     &:hover {
       transform: perspective(500rem) skewY(0);
     }
-  }
+  } 
 }
 
 @keyframes slide-in-mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
