@@ -11,6 +11,8 @@ import { Context } from './Provider'
 
 import Header from '../components/molecules/Header'
 
+import '../styles/index.css'
+
 class App extends Component {
   render() {
     return (

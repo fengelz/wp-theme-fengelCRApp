@@ -17,8 +17,11 @@
     "underscore": "^1.9.1"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar src/styles/index.scss --importer node_modules/node-sass-glob-importer/dist/cli.js -o src/styles/",
+    "watch-css": "onchange 'src/**/*.scss' -i -- npm run build-css",
+    
+    "build-css-old": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css-old": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "build-js": "react-scripts build",
     "start": "npm-run-all -p watch-css start-js",

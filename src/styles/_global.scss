@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Nixie+One');
+
+@import '../../node_modules/normalize.css/normalize.css';
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  font-family: 'Nixie One', serif;
+  background:
+    radial-gradient(#ddd 15%, transparent 16%) 0 0,
+    radial-gradient(#ddd 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#eee;
+  background-size:16px 16px;
+  line-height: 1.5;
+  height: 100%;
+}
+body {
+  box-shadow: inset 0 -5rem 6rem rgba(0, 0, 0, 0.1)
+}
+#root {
+  overflow: hidden;
+  height: 100%;
+}
+a {
+  color: inherit;
+  transition: all 300ms ease-in;
+  transform: translateX(0);
+  &:hover {
+    opacity: 0.6;
+    transform: translateX(1rem);
+  }
+}
+h1,
+h2,
+h3 {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+* {
+  box-sizing: border-box;
+}

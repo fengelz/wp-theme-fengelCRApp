@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import Posts from '../Posts'
 import Intro from '../../molecules/Intro'
 
-import './styles.css'
-
 class Taxonomy extends Component {
   render() {
     const { posts, h1, full } = this.props

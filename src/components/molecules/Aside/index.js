@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 
 import Header from '../Header'
-import './styles.css'
 
 class Aside extends PureComponent {
   render() {
