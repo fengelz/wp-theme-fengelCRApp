@@ -87,7 +87,7 @@ img {
     margin: 0; 
     & > section {
       transform: translateX(-100vw);
-      animation: slide-in 300ms ease-in;
+      animation: slide-in 400ms ease-in;
       animation-direction: normal;
       animation-delay: 300ms;
       animation-fill-mode: forwards;
@@ -102,6 +102,9 @@ img {
 @keyframes slide-in {
   0% {
     transform: translateX(-100vw);
+  }
+  50% {
+    transform: translateX(0);
   }
   100% {
     transform: translateX(0);

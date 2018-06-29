@@ -11,32 +11,76 @@
     height: 100%;
     width: 100%;
     white-space: nowrap;
-    padding: 1.5rem; }
+    padding: 1.5rem;
+    padding-bottom: 5rem;
+    overflow-y: auto; }
   .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 ul,
   .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 li {
     padding: 0;
     margin: 0;
-    list-style: none; }
+    list-style: none;
+    position: relative;
+    background-color: transparent;
+    transition: background-color 200ms ease-in; }
+    .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 ul:after,
+    .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 li:after {
+      content: "";
+      position: absolute;
+      bottom: .25rem;
+      right: -2rem;
+      height: 0;
+      border-left: 1.5rem solid transparent;
+      border-right: 1.5rem solid transparent;
+      border-top: 1.5rem solid transparent;
+      transform: rotate(-90deg);
+      transition: border-top 200ms ease-in; }
+    .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 ul.active,
+    .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 li.active {
+      background-color: crimson;
+      color: white;
+      margin-left: -.5rem; }
+      .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 ul.active a,
+      .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 li.active a {
+        padding-left: 12px; }
+      .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 ul.active:after,
+      .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 li.active:after {
+        border-top: 1.5rem solid crimson;
+        transform: rotate(-90deg); }
   .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 h3 {
     color: crimson;
-    margin-bottom: 0; }
+    margin-bottom: 12px; }
   .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 a {
-    text-decoration: none; }
+    text-decoration: none;
+    padding: 3px 0 3px 6px;
+    display: inline-block; }
 
 @media (min-width: 992px) {
   .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
+    animation: slide-in-mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 500ms ease-in;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
     width: 20vw;
     border-right: 0px dashed #666;
     box-shadow: -1.5rem 0rem 3rem 1.5rem rgba(0, 0, 0, 0.3);
     flex: none;
-    transform-origin: bottom right;
     transform: perspective(500rem) skewY(-5deg);
-    transition: transform 200ms ease-in; }
+    transform-origin: bottom right;
+    transition: transform 200ms ease-in !important; }
     .mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29:hover {
       transform: perspective(500rem) skewY(0); } }
 
 @keyframes slide-in-mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
   0% {
     transform: translateX(-100%); }
+  50% {
+    transform: translateX(0); }
+  80% {
+    transform: perspective(0) skewY(0); }
   100% {
-    transform: translateX(0); } }
+    transform: perspective(500rem) skewY(-5deg); } }
+
+@keyframes flip-mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29 {
+  0% {
+    transform: perspective(500rem) skewY(-5deg); }
+  100% {
+    transform: perspective(0) skewY(0); } }
