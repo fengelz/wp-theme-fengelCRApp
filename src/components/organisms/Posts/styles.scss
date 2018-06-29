@@ -1,12 +1,7 @@
 .org-a9ca065c-a467-47bb-a252-2138bff1cb1d {
-  padding: .75rem 1.5rem;
-  h1 {
-    text-align: left;
-  }
-  p {
-  }
-  .home_contact {
-    padding-top: 2rem;
+  padding: .75rem 1.5rem 6rem;
+  h2 {
+    margin-bottom: 1.5rem;
   }
   a {
     text-decoration: none;
@@ -19,10 +14,7 @@
     padding-bottom: 0.75rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-}
-
-@media (min-width: 992px) {  
-  .org-a9ca065c-a467-47bb-a252-2138bff1cb1d {
-     width: auto;
+  @include media-breakpoint-up(lg) {
+    width: auto;
   }
 }

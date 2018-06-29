@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './styles.css'
-
 class Intro extends React.Component {
   render() {
     return (

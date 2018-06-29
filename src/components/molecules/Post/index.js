@@ -4,8 +4,6 @@ import moment from 'moment'
 
 import Html from '../../atoms/Html'
 
-import './styles.css'
-
 class Post extends PureComponent {
   render() {
     const { post } = this.props

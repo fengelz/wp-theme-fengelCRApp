@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import Posts from '../Posts'
 import Intro from '../../molecules/Intro'
 
-import './styles.css'
-
 class Home extends Component {
   render() {
     const { posts } = this.props

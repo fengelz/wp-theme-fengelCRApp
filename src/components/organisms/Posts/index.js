@@ -4,8 +4,6 @@ import moment from 'moment'
 
 import Html from '../../atoms/Html'
 
-import './styles.css'
-
 class Posts extends Component {
   render() {
     const { posts } = this.props

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import './styles.css'
-
 class Master extends React.Component {
   render() {
     return (
