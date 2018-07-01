@@ -8,7 +8,7 @@ class Aside extends PureComponent {
     const { pathname } = this.props.location
     return (
       <aside className="mol-2a2c1466-55b6-4b02-9bd9-3261469c7c29">
-        <Header toggleMenu={this.props.toggleMenu} char="-" />
+        <Header toggleMenu={this.props.toggleMenu} close={true} />
         <nav>
           <ul>
             <li className={pathname === '/' ? 'active' : ''}>
