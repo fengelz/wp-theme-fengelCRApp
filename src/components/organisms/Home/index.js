@@ -10,6 +10,7 @@ class Home extends Component {
       <div className="org-8931390c-6aa9-4f38-a625-82028bf97d55">
         <Intro>
           <h1>A CRApp / Wordpress powered creative outlet</h1>
+          <p>Hi. My name is Sune. This is my creative outlet of music, code and artsy fartsy shit.</p>
           <p>Go on, have a look see...</p>
         </Intro>
 

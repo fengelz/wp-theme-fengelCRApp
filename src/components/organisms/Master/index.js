@@ -12,7 +12,7 @@ class Master extends React.Component {
           <meta charSet="utf-8" />
           <meta
             name="description"
-            content="A CRApp/Wordpress powered creative outlet of music and artsy fartsy shit. Conducted by a cancer ridden frontend developer."
+            content="Hi. My name is Sune. This is my CRApp/Wordpress powered creative outlet of music and artsy fartsy shit."
           />
           <title>Sune Fengel | Bitch and Peaces</title>
         </Helmet>
