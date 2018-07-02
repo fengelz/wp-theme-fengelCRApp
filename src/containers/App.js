@@ -15,6 +15,7 @@ import '../styles/index.css'
 
 class App extends Component {
   render() {
+    const reload = () => window.location.reload();
     return (
       <Context.Consumer>
         {({ state }) => {
@@ -29,6 +30,7 @@ class App extends Component {
                     <Route exact path="/:postSlug" component={PostContainer} />
                     <Route path="/tag/:slug" component={TaxContainer} />
                     <Route path="/category/:slug" component={TaxContainer} />
+                    <Route path="/sitemap.xml" onEnter={reload} />
                     <Route component={HomeContainer} />
                   </Switch>
                 </section>
