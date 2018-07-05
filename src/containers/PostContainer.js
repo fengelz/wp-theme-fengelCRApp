@@ -9,7 +9,10 @@ class PostContainer extends React.Component {
       <Context.Consumer>
         {({ actions }) => {
           return (
-            <Post post={actions.getPost(this.props.match.params.postSlug)} />
+            <Post
+              url={this.props.location.pathname}
+              post={actions.getPost(this.props.match.params.postSlug)}
+            />
           )
         }}
       </Context.Consumer>

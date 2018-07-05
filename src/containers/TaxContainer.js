@@ -5,7 +5,7 @@ import Taxonomy from '../components/organisms/Taxonomy'
 
 class TaxContainer extends React.PureComponent {
   render() {
-    const { match } = this.props
+    const { match, location } = this.props
     return (
       <Context.Consumer>
         {({ actions }) => {
@@ -15,6 +15,7 @@ class TaxContainer extends React.PureComponent {
           return (
             <Taxonomy
               h1={h1}
+              url={location.pathname}
               full={
                 match.params.slug === 'music' ||
                 match.params.slug === 'artsy-fartsy'
